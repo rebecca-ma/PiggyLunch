@@ -1,0 +1,6 @@
+<%= render 'shared/header', title: 'Add a New Restaurant' %>
+<%= render 'shared/errors', container: @restaurant %>
+<%= render 'form', submit_msg: 'Add Restaurant!' %>
+<div id='foot_links'>
+  <%= link_to 'Cancel', restaurants_path %>
+</div>

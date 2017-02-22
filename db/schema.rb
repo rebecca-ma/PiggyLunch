@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20170204013526) do
   create_table "piggies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "restaurant_id"
-    t.integer  "piggy_score"
+    t.integer  "score"
     t.text     "comment",       limit: 65535
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
@@ -26,16 +26,16 @@ ActiveRecord::Schema.define(version: 20170204013526) do
   create_table "restaurants", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.text     "description", limit: 65535
+    t.text     "tags",        limit: 65535
+    t.string   "map_url"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "username"
-    t.string   "encrypted_password"
-    t.string   "salt"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

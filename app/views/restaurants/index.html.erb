@@ -1,0 +1,6 @@
+<%= render 'shared/header', title: 'Restaurants' %>
+
+<p><%= link_to 'Add a New Restaurant', new_restaurant_path %></p>
+<% @restaurants.each do |restaurant| %>
+  <p><%= link_to restaurant.name, show_restaurant_path(restaurant) %></p>
+<% end %>

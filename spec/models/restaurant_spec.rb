@@ -49,7 +49,7 @@ RSpec.describe Restaurant, type: :model do
     end
   end
   
-  describe "method mean_score" do
+  describe "method mean_score methods" do
     before(:each) do
       @rest = Restaurant.new(name: 'Restaurant')
       @user1 = User.new(username: 'User 1', password: 'password')
@@ -72,8 +72,17 @@ RSpec.describe Restaurant, type: :model do
       end
     end
     
-    it "should return the mean of all its piggy scores" do
-      expect(@rest.mean_score).to eq 4
+    describe "mean_score_all" do
+      it "should return the mean of all its piggy scores" do
+        expect(@rest.mean_score_all).to eq 4
+      end
+    end
+
+    describe "mean_score_by_users" do
+      it "should return the mean of the selected piggy scores" do
+        users = [@user1, @user3]
+        expect(@rest.mean_score_by_users(users)).to eq 4.5
+      end
     end
     
     after(:each) do

@@ -55,3 +55,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rspec'
 gem 'rspec-rails'
 gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'rails-controller-testing'
