@@ -1,4 +1,4 @@
-<%= form_for @restaurant do |f| %>
+<%= form_for @restaurant, url: url do |f| %>
   <p>
     Restaurant Name <br>
     <%= f.text_field :name %>
@@ -13,7 +13,7 @@
   </p>
   <p>
     Map <br>
-    <%= f.text_area :map_url %>
+    <%= f.text_area :map_url_unparsed %>
   </p>
   <p>
     <%= f.submit submit_msg %>

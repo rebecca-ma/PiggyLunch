@@ -4,7 +4,7 @@ class CreateRestaurants < ActiveRecord::Migration[5.0]
       t.string :name
       t.text :description
       t.text :tags
-      t.string :map_url
+      t.text :map_url
       t.timestamps
     end
   end

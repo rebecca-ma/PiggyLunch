@@ -1,7 +1,23 @@
 <%= render 'shared/header', title: @user.name + "'s Profile" %>
 
-<p>TODO: what to put here</p>
+<p>
+  <%= @user.blurb %>
+</p>
+
+<p>
+  <%= @user.name %>'s piggies:
+</p>
+<% @user.piggies.each do |piggy| %>  
+  <p>
+    <%= link_to piggy.restaurant.name, show_restaurant_path(piggy.restaurant) %><br>
+    <%= piggy.score %><br>
+    <%= piggy.comment %><br>
+    <%= link_to "Edit this Piggy", edit_piggy_path(piggy.restaurant, piggy) %>
+  </p>
+<% end %>
 
 <div id='foot_links'>
+  <%= link_to 'Edit this User', edit_user_path(@user) %>
+  <%= link_to 'Delete this User', delete_user_path(@user) %>
   <%= link_to 'Back to People', users_path %>
 </div>

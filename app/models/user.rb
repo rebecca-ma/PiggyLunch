@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :piggies
+  has_many :piggies, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true
 

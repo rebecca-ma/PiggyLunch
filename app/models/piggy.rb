@@ -1,10 +1,8 @@
 class Piggy < ApplicationRecord
-  attr_accessor :comment
-
   belongs_to :user
   belongs_to :restaurant
 
-  validates :score, presence: true, inclusion: { in: (0..8) }
+  validates :score, inclusion: { in: (1..5) }, presence: true
   validates :restaurant, uniqueness: { scope: :user }
 
   def matching_user?(to_check)

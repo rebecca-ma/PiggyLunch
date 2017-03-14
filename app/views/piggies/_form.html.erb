@@ -1,0 +1,17 @@
+<%= form_for @piggy, url: url  do |f| %>
+  <%= f.hidden_field :restaurant_id, value: @restaurant.id %>  
+  <p>
+    Who are you?<br>
+    <%= f.select :user_id, User.all.collect { |u| [u.name, u.id] } %>
+  <p>
+    Score (1 through 5 piggies)<br>
+    <%= f.number_field :score %>
+  </p>
+  <p>
+    Comment<br>
+    <%= f.text_area :comment %>
+  </p>
+  <p>
+    <%= f.submit submit_msg %>
+  </p>
+<% end %>

@@ -5,9 +5,6 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
-    if !@restaurant
-      redirect_to restaurants_path
-    end
   end
 
   def new
@@ -25,22 +22,25 @@ class RestaurantsController < ApplicationController
 
   def edit
     @restaurant = Restaurant.find(params[:id])
-    if !@restaurant
-      redirect_to restaurants_path
-    end
   end
 
   def update
     @restaurant = Restaurant.find(params[:id])
-    if @restaurant.update
+    if @restaurant.update(restaurant_params)
       redirect_to show_restaurant_path(@restaurant)
     else
       render 'edit'
     end
   end
 
+  def delete
+    @restaurant = Restaurant.find(params[:id])
+    @restaurant.destroy
+    redirect_to restaurants_path
+  end
+
   private
     def restaurant_params
-      params.require(:restaurant).allow(:name, :description, :map_url, :tags)
+      params.require(:restaurant).permit(:name, :description, :map_url_unparsed, :tags)
     end
 end

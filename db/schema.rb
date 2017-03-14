@@ -27,15 +27,16 @@ ActiveRecord::Schema.define(version: 20170204013526) do
     t.string   "name"
     t.text     "description", limit: 65535
     t.text     "tags",        limit: 65535
-    t.string   "map_url"
+    t.text     "map_url",     limit: 65535
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "blurb",      limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
 end

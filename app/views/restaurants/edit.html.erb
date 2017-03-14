@@ -1,6 +1,6 @@
 <%= render 'shared/header', title: 'Edit Restaurant' %>
 <%= render 'shared/errors', container: @restaurant %>
-<%= render 'form', submit_msg: 'Save Changes' %>
+<%= render 'form', url: update_restaurant_path(@restaurant), submit_msg: 'Save Changes' %>
 <div id='foot_links'>
   <%= link_to 'Cancel', show_restaurant_path(@restaurant) %>
 </div>
