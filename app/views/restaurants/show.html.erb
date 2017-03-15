@@ -1,46 +1,48 @@
 <%= render 'shared/header', title: @restaurant.name %>
 
-<p>
-  <%= @restaurant.mean_score_all %> piggies over all users
-</p>
-
-<p>
-  <%= @restaurant.tags %>
-</p>
-
-<p>
-  <%= @restaurant.description %>
-</p>
-
-<% unless @restaurant.map_url.blank? %>
-  <iframe src=<%= @restaurant.map_url %> width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-<% end %>
-
-<p>
-  <%= link_to 'Submit your Piggy Rating!', new_piggy_path %>
-</p>
-
-<div id='restaurant_piggies'>
-  <% @restaurant.piggies.each do |piggy| %>
-    <div class='piggy'>
-      <p>
-        <%= link_to piggy.user.name, show_user_path(piggy.user) %>
-      </p>
-      <p>
-        <%= piggy.score %>
-      </p>
-      <p>
-        <%= piggy.comment %>
-      </p>
-      <p>
-        <%= link_to 'Edit this Piggy', edit_piggy_path(restaurant_id: @restaurant, id: piggy) %>
-      </p>
-    </div>
+<div id='body'>
+  <p>
+    <%= @restaurant.mean_score_all %> piggies over all users
+  </p>
+  
+  <p>
+    <%= @restaurant.tags %>
+  </p>
+  
+  <p>
+    <%= @restaurant.description %>
+  </p>
+  
+  <% unless @restaurant.map_url.blank? %>
+    <iframe src=<%= @restaurant.map_url %> width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
   <% end %>
-</div>
-
-<div id='foot_links'>  
-  <%= link_to 'Edit this Restaurant', edit_restaurant_path(@restaurant) %>
-  <%= link_to 'Delete this Restaurant', delete_restaurant_path(@restaurant) %>
-  <%= link_to 'Go Back to Restaurant List', restaurants_path %>
+  
+  <p>
+    <%= link_to 'Submit your Piggy Rating!', new_piggy_path %>
+  </p>
+  
+  <div id='restaurant_piggies'>
+    <% @restaurant.piggies.each do |piggy| %>
+      <div class='piggy'>
+        <p>
+          <%= link_to piggy.user.name, show_user_path(piggy.user) %>
+        </p>
+        <p>
+          <%= piggy.score %>
+        </p>
+        <p>
+          <%= piggy.comment %>
+        </p>
+        <p>
+          <%= link_to 'Edit this Piggy', edit_piggy_path(restaurant_id: @restaurant, id: piggy) %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+  
+  <div id='foot_links'>  
+    <%= link_to 'Edit this Restaurant', edit_restaurant_path(@restaurant) %>
+    <%= link_to 'Delete this Restaurant', delete_restaurant_path(@restaurant) %>
+    <%= link_to 'Go Back to Restaurant List', restaurants_path %>
+  </div>
 </div>

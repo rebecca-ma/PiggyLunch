@@ -1,6 +1,9 @@
 <%= render 'shared/header', title: 'Give Piggies!' %>
-<%= render 'shared/errors', container: @piggy %>
-<%= render 'form', url: create_piggy_path(@restaurant), submit_msg: 'Submit Piggy!' %>
-<div id='foot_links'>
-  <%= link_to 'Cancel', show_restaurant_path(@restaurant) %>
+
+<div id='body'>
+  <%= render 'shared/errors', container: @piggy %>
+  <%= render 'form', url: create_piggy_path(@restaurant), submit_msg: 'Submit Piggy!' %>
+  <div id='foot_links'>
+    <%= link_to 'Cancel', show_restaurant_path(@restaurant) %>
+  </div>
 </div>

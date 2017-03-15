@@ -1,6 +1,9 @@
 <%= render 'shared/header', title: 'Register a New User' %>
-<%= render 'shared/errors', container: @user %>
-<%= render 'form', url: create_user_path, submit_msg: 'Register!' %>
-<div id='foot_links'>
-  <%= link_to 'Cancel', users_path %>
+
+<div id='body'>
+  <%= render 'shared/errors', container: @user %>
+  <%= render 'form', url: create_user_path, submit_msg: 'Register!' %>
+  <div id='foot_links'>
+    <%= link_to 'Cancel', users_path %>
+  </div>
 </div>

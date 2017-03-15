@@ -1,11 +1,13 @@
 <%= render 'shared/header', title: 'Page Not Found' %>
 
-<p>
-  Oops! It looks like the page you are looking for doesn't exist.
-</p>
-
-<p>
-  <%= link_to 'Go Back', :back %>
-  or
-  <%= link_to 'Go Home', root_path %>
-</p>
+<div id='body'>
+  <p>
+    Oops! It looks like the page you are looking for doesn't exist.
+  </p>
+  
+  <p>
+    <%= link_to 'Go Back', :back %>
+    or
+    <%= link_to 'Go Home', root_path %>
+  </p>
+</div>  

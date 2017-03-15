@@ -1,7 +1,10 @@
 <%= render 'shared/header', title: 'Edit your Piggy' %>
-<%= render 'shared/errors', container: @piggy %>
-<%= render 'form', url: update_piggy_path(restaurant_id: @restaurant, id: @piggy), submit_msg: 'Save Changes' %>
-<div id='foot_links'>
-  <%= link_to 'Cancel', :back %>
-<%#  <%= link_to 'Cancel', show_restaurant_path(@restaurant) %>
+
+<div id='body'>
+  <%= render 'shared/errors', container: @piggy %>
+  <%= render 'form', url: update_piggy_path(restaurant_id: @restaurant, id: @piggy), submit_msg: 'Save Changes' %>
+  <div id='foot_links'>
+    <%= link_to 'Cancel', :back %>
+  <%#  <%= link_to 'Cancel', show_restaurant_path(@restaurant) %>
+  </div>
 </div>

@@ -68,6 +68,14 @@
     font-family: sans-serif;
 }
 
+.header_tab a {
+    text-decoration: none;
+}
+
+.header_tab a:visited {
+    color: black;
+}
+
 #restaurant_tab {
     position: absolute;
     left: 30vw;
@@ -76,4 +84,9 @@
 #user_tab {
     position: absolute;
     left: 50vw;
+}
+
+#body {
+    position: absolute;
+    top: 25vh;
 }
